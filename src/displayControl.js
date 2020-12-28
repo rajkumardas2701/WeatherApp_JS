@@ -1,10 +1,8 @@
 const displayController = () => {
-  // const content = document.getElementById('content');
+  const content = document.getElementById('content');
+  content.setAttribute('class', 'container');
 
   const displaySearch = () => {
-    const content = document.getElementById('content');
-    content.setAttribute('class', 'container');
-
     const formInput = document.createElement('form');
     formInput.setAttribute('class', 'form-input');
     content.appendChild(formInput);
@@ -25,8 +23,24 @@ const displayController = () => {
     formInput.appendChild(submit);
   };
 
+  const displayResults = (data) => {
+    const resultSection = document.createElement('h2');
+    resultSection.setAttribute('class', 'result-section');
+    resultSection.textContent = data.name;
+    content.appendChild(resultSection);
+
+    const left = document.createElement('div');
+    left.setAttribute('class', 'left-side');
+    resultSection.appendChild(left);
+
+    const right = document.createElement('div');
+    right.setAttribute('class', 'right-side');
+    resultSection.appendChild(right);
+  };
+
   return {
     displaySearch,
+    displayResults,
   };
 };
 
