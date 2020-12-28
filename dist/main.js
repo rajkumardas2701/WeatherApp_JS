@@ -1,0 +1,1 @@
+(()=>{"use strict";fetch("http://api.openweathermap.org/data/2.5/weather?q=shimla&appid=0667f5da1705bdf0d4b3c047cf3ab568",{mode:"cors"}).then((a=>a.json())).then((a=>(console.log(a.main.temp_max),a.main))).catch((a=>{console.log(a)}))})();
