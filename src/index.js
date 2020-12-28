@@ -1,3 +1,5 @@
-import report from './weatherData';
+// import report from './weatherData';
+import displayController from './displayControl';
 
-report();
+// report();
+displayController().displaySearch();
