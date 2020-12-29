@@ -20,6 +20,8 @@ const getImage = (value) => {
     url = 'images/drizzle.gif';
   } else if (value === 'Haze') {
     url = 'images/haze.gif';
+  } else if (value === 'Fog') {
+    url = 'images/fog.gif';
   }
   return url;
 };
