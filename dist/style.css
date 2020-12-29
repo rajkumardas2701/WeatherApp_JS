@@ -69,11 +69,8 @@ h1 {
   font-size: 35px;
   margin-bottom: 5px;
   text-transform: capitalize;
-  color: rgb(185, 31, 3);
-}
-
-.error-msg {
-  color: red !important;
+  color: black;
+  text-shadow: 2px 2px 5px red;
 }
 
 .res_value {
@@ -113,10 +110,11 @@ h1 {
 }
 
 .weather_value {
-  color: rgb(255, 0, 43);
+  text-shadow: 2px 2px 5px rgb(236, 157, 128);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 30px;
   font-weight: bolder;
+  margin-bottom: 5px;
 }
 
 .lat_value {
@@ -133,4 +131,36 @@ h1 {
   font-size: 25px;
   font-weight: bolder;
   color: blueviolet;
+}
+
+.imgDesc {
+  color: black;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 25px;
+  font-weight: bolder;
+  margin-top: 0;
+  text-transform: capitalize;
+  color: rgb(255, 0, 43);
+}
+
+#loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  border-bottom: 16px solid blue;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  margin: 10px auto;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

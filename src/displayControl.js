@@ -44,22 +44,34 @@ const displayController = () => {
     }
   };
 
+  const displayLoader = () => {
+    clearResult();
+    const loader = document.createElement('div');
+    loader.setAttribute('id', 'loader');
+    content.appendChild(loader);
+  };
+
   const displayResults = (data, error) => {
     document.getElementById('form-text').value = '';
     const resultSection = document.createElement('div');
     resultSection.setAttribute('id', 'result-section');
     content.appendChild(resultSection);
 
+    const loaderElement = document.getElementById('loader');
+
     if (error) {
+      loaderElement.remove();
+
       const header = document.createElement('h2');
       header.setAttribute('id', 'result-header');
-      header.setAttribute('class', 'error-msg');
       header.textContent = `${data}!!!`;
       resultSection.appendChild(header);
     } else {
+      loaderElement.remove();
+
       const header = document.createElement('h2');
       header.setAttribute('id', 'result-header');
-      header.textContent = `>> ${data.name} <<`;
+      header.textContent = `${data.name}`;
       resultSection.appendChild(header);
 
       const country = document.createElement('P');
@@ -83,6 +95,11 @@ const displayController = () => {
       imgText.setAttribute('class', 'weather_value');
       imgText.innerText = `${data.weather[0].main}`;
       imgSec.appendChild(imgText);
+
+      const imgDesc = document.createElement('p');
+      imgDesc.setAttribute('class', 'imgDesc');
+      imgDesc.innerText = `${data.weather[0].description}`;
+      imgSec.appendChild(imgDesc);
 
       const img = document.createElement('img');
       img.setAttribute('class', 'image');
@@ -126,6 +143,7 @@ const displayController = () => {
     displayResults,
     navbar,
     clearResult,
+    displayLoader,
   };
 };
 
