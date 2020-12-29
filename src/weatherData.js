@@ -7,11 +7,11 @@ const report = async (city) => {
     const response = await fetch(url, { mode: 'cors' });
     const data = await response.json();
     if (regEx.test(data.cod)) {
-      console.log(data.message);
+      // console.log(data.message);
     } else {
       // return data;
       displayController().displayResults(data);
-      console.log(data);
+      // console.log(data);
     }
     return data;
   } catch (error) {
