@@ -13,7 +13,7 @@ const report = async (city) => {
       displayController().displayResults(data);
       console.log(data);
     }
-    // return data;
+    return data;
   } catch (error) {
     return error;
   }
