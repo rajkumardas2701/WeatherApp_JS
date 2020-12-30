@@ -1,8 +1,7 @@
-// import report from './weatherData';
 import displayController from './displayControl';
-import controller from './appLogic';
+import { controller, togglebtn } from './appLogic';
 
-// report();
 displayController().navbar();
 displayController().displaySearch();
 controller();
+togglebtn();

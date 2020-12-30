@@ -1,4 +1,5 @@
-import getImage from './imageGenerator';
+import { getImage, temperatures } from './imgTempGenerator';
+import { togglebtn } from './appLogic';
 
 const displayController = () => {
   const content = document.getElementById('content');
@@ -117,13 +118,30 @@ const displayController = () => {
       results.appendChild(right);
 
       const temp = document.createElement('span');
-      temp.setAttribute('class', 'res_value');
-      temp.innerText = `Temperature: ${(data.main.temp - 273.15).toFixed(2)}℃ (Min: ${(data.main.temp_min - 273.15).toFixed(2)}℃ - Max: ${(data.main.temp_max - 273.15).toFixed(2)}℃)`;
-      right.appendChild(temp);
+      temp.setAttribute('id', 'res_temp');
 
       const feels = document.createElement('span');
-      feels.setAttribute('class', 'res_value');
+      feels.setAttribute('id', 'res_feels');
+
+      const temp1 = [{
+        kel: [data.main.temp,
+          data.main.temp_min,
+          data.main.temp_max,
+          data.main.feels_like],
+      },
+      { deg: [] },
+      { far: [] },
+      ];
+      const tempUpdated = temperatures(temp1);
+      // console.log(tempUpdated);
+      // document.querySelector('toggle-btn').addEventListener('click', (temp1, unit) => {
+
+      // });
+
+      temp.innerText = `Temperature: ${(data.main.temp - 273.15).toFixed(2)}℃ (Min: ${(data.main.temp_min - 273.15).toFixed(2)}℃ - Max: ${(data.main.temp_max - 273.15).toFixed(2)}℃)`;
       feels.innerText = `Feels Like: ${(data.main.feels_like - 273.15).toFixed(2)}℃`;
+
+      right.appendChild(temp);
       right.appendChild(feels);
 
       const humidity = document.createElement('span');
@@ -135,6 +153,13 @@ const displayController = () => {
       pressure.setAttribute('class', 'res_value');
       pressure.innerText = `Pressure: ${data.main.pressure} hPa`;
       right.appendChild(pressure);
+
+      const toggleTemp = document.createElement('input');
+      toggleTemp.setAttribute('id', 'toggle-btn');
+      toggleTemp.setAttribute('type', 'submit');
+      toggleTemp.value = 'Toggle Temperature';
+      right.appendChild(toggleTemp);
+      togglebtn(toggleTemp, tempUpdated);
     }
   };
 

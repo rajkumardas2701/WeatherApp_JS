@@ -2,7 +2,7 @@ import displayController from './displayControl';
 
 const report = async (city) => {
   displayController().displayLoader();
-  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0667f5da1705bdf0d4b3c047cf3ab568`;
+  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=83fd08105d85b9cbdd5228466d9d0385`;
   try {
     const regEx = /^[4-5][0-9][0-9]$/;
     let error = false;

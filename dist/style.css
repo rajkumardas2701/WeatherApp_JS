@@ -46,7 +46,8 @@ h1 {
 }
 
 #form-text:focus,
-#form-submit {
+#form-submit,
+#toggle-btn {
   outline:none;
 }
 
@@ -74,6 +75,13 @@ h1 {
 }
 
 .res_value {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+#res_temp,
+#res_feels {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 25px;
   font-weight: bolder;
@@ -163,4 +171,17 @@ h1 {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+#toggle-btn {
+  width: 40%;
+  height: 40px;
+  position: relative;
+  top: -200px;
+  right: -400px;
+  border-radius: 10px;
+  background: cornflowerblue;
+  color: white;
+  font-weight: bolder;
+  font-size: medium;
 }
