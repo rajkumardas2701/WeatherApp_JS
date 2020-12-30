@@ -1,5 +1,6 @@
 import displayController from './displayControl';
-import { controller, togglebtn } from './appLogic';
+import togglebtn from './appLogic';
+import controller from './weatherData';
 
 displayController().navbar();
 displayController().displaySearch();

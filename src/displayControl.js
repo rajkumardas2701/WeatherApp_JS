@@ -1,5 +1,5 @@
 import { getImage, temperatures } from './imgTempGenerator';
-import { togglebtn } from './appLogic';
+import togglebtn from './appLogic';
 
 const displayController = () => {
   const content = document.getElementById('content');
@@ -124,19 +124,12 @@ const displayController = () => {
       feels.setAttribute('id', 'res_feels');
 
       const temp1 = [{
-        kel: [data.main.temp,
-          data.main.temp_min,
-          data.main.temp_max,
-          data.main.feels_like],
+        kel: [data.main.temp, data.main.temp_min, data.main.temp_max, data.main.feels_like],
       },
       { deg: [] },
       { far: [] },
       ];
       const tempUpdated = temperatures(temp1);
-      // console.log(tempUpdated);
-      // document.querySelector('toggle-btn').addEventListener('click', (temp1, unit) => {
-
-      // });
 
       temp.innerText = `Temperature: ${(data.main.temp - 273.15).toFixed(2)}℃ (Min: ${(data.main.temp_min - 273.15).toFixed(2)}℃ - Max: ${(data.main.temp_max - 273.15).toFixed(2)}℃)`;
       feels.innerText = `Feels Like: ${(data.main.feels_like - 273.15).toFixed(2)}℃`;
