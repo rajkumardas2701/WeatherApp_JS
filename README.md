@@ -17,7 +17,7 @@ This projects implements using fetch method to return data from the weather api 
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo](https://rawcdn.githack.com/rajkumardas2701/WeatherApp_JS/0da9e1cf8f3b92f71026a2918ee9dec8f1e63839/dist/index.html)
 
 
 ## Getting Started
